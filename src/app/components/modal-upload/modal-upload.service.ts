@@ -1,0 +1,29 @@
+import { Injectable, EventEmitter } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ModalUploadService {
+
+  public tipo: string;
+  public id: string;
+
+  public oculto: string = 'oculto'; // oculto es una clase usada para ocultar el div del modal
+
+  public notificacion = new EventEmitter<any>();
+
+  constructor() {
+    console.log('Modal upload listo.!');
+  }
+
+  ocultarModal() {
+    this.oculto = 'oculto';
+  }
+
+  mostrarModal( tipo: string, id: string ) {
+    this.oculto = '';
+    this.id = id;
+    this.tipo = tipo;
+
+  }
+}
