@@ -31,8 +31,6 @@ export class MedicoComponent implements OnInit {
 
         const id = params.id;
 
-        console.log(id);
-
         if (id !== 'nuevo') {
           this.cargarMedico( id );
         }

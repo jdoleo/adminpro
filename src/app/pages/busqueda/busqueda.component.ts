@@ -14,7 +14,7 @@ import { Hospital } from '../../models/hospital.model';
 export class BusquedaComponent implements OnInit {
 
   usuarios: Usuario[] = [];
-  medicos: Medico[] =[];
+  medicos: Medico[] = [];
   hospitales: Hospital[];
 
   constructor(public activatedRoute: ActivatedRoute, public http: HttpClient) {
@@ -33,7 +33,7 @@ export class BusquedaComponent implements OnInit {
 
     this.http.get( url )
     .subscribe( (resp: any) => {
-      console.log(resp);
+
       this.hospitales = resp.hospitales;
       this.medicos = resp.medicos;
       this.usuarios = resp.usuarios;

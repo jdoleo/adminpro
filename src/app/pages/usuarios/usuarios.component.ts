@@ -38,7 +38,6 @@ export class UsuariosComponent implements OnInit {
     this.usuarioService.cargarUsuarios(this.desde)
     .subscribe( (resp: any) => {
 
-      console.log(resp);
       this.totalRegistros = resp.total;
       this.usuarios = resp.usuarios;
       this.cargando = false;
@@ -48,7 +47,6 @@ export class UsuariosComponent implements OnInit {
 
   cambiarDesde(valor: number) {
     const desde = this.desde + valor;
-    console.log(desde);
 
     if (desde >= this.totalRegistros) {
       return;
